@@ -232,6 +232,7 @@ C: "A4"
 correct: 0,
 incorrect: 0,
 notAnswered: 0,
+started: false,
 
 
 gameFlow: function() {
@@ -262,7 +263,7 @@ gameFlow: function() {
 
       //  Decrease number by one.
       seconds--;
-  	$("#display").html("<h4>" + seconds); 	
+  	$("#display").text(seconds); 	
 
 
 
@@ -293,11 +294,27 @@ gameFlow: function() {
 
     $(".start").on("click", function() {
 
+
+    	if(game.started===false){
+
     	run();
     	$(".btn").removeClass("active").addClass("disabled");
     	$("#move").addClass("d-flex justify-content-center");
+    	$("#question").text(game.questions[0].Q);
+    	$("#A1").text(game.questions[0].A1);
+    	$("#A2").text(game.questions[0].A2);
+    	$("#A3").text(game.questions[0].A3);
+    	$("#A4").text(game.questions[0].A4);
+    	game.started=true; }
 
-    })}//end of gameFlow function
+    })
+
+
+
+
+
+
+    }//end of gameFlow function
 
     	}
 
