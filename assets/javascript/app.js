@@ -46,7 +46,7 @@ A1: 'United Kingdom',
 A2: 'New Zealand',
 A3: 'France',
 A4: 'United States of America',
-C: "A1"
+C: "A2"
 
 },
 
@@ -64,7 +64,7 @@ C: "A1"
 
 {
 
-Q: "Who's assasination has been acredited for the outbreak of World War One?",
+Q: "Who's assasination has been accredited for the outbreak of World War One?",
 A1: "King Leopold of Belgium",
 A2: "Tzar Nicolas of Russia",
 A3: "Archduke Franz Ferdinand of Austria",
@@ -130,7 +130,7 @@ C: "A2"
 
 {
 
-Q: "Hannibal famously crossed The Alps with which animals",
+Q: "Hannibal famously crossed The Alps with which animals?",
 A1: "Camels",
 A2: "Rhinos",
 A3: "Donkeys",
@@ -233,92 +233,133 @@ correct: 0,
 incorrect: 0,
 notAnswered: 0,
 started: false,
+question: 0,
+correctAnswer:"",
+seconds: 2000,
+intervalSeconds:"",
 
 
-gameFlow: function() {
+decrementSeconds: function(){
+
+	if (game.seconds === 0 ){
+
+		alert("Time Up!");
+		game.stop();
+
+	} else {
+
+		game.seconds--;
+		$("#display").html("<h4>" + game.seconds);
+
+	}
+
+}, //end of decrement seconds
+
+
+timer: function(){
+
+
+	$(".start").on("click", function () {
+
+	if(game.started===false){
+	$("#move").addClass("d-flex justify-content-center");
+	$(".start").removeClass("active").addClass("disabled");
+	game.newQuestion();
+	game.started=true;
+
+    	 }})}, //end of timer function
+
+
+stop: function() {
+
+
+	  clearInterval(game.intervalSeconds);
+      game.question++;
+      console.log("next question: " + game.question);
+      // game.gameFlow();
+      game.newQuestion();
 
 
 
+}, //end of stop
 
-	var seconds = 2000;
+unbind: function(){
 
-    //  Variable that will hold our interval ID when we execute
-    //  the "run" function
-    var intervalSeconds;
 
-    //  When the stop button gets clicked, run the stop function.
-    // $("#stop").on("click", stop);
+	$("#A1").unbind("click");
+	$("#A2").unbind("click");
+	$("#A3").unbind("click");
+	$("#A4").unbind("click");
 
-    //  When the resume button gets clicked, execute the run function.
-    // $("#resume").on("click", run);
 
-    //  The run function sets an interval
-    //  that runs the decrement function once a second.
-    function run() {
-      intervalSeconds = setInterval(decrementSeconds, 10);
-    }
-
-    //  The decrement function.
-    function decrementSeconds() {
-
-      //  Decrease number by one.
-      seconds--;
-  	$("#display").text(seconds); 	
+},
 
 
 
+newQuestion: function() {
+
+		game.seconds=2000,
+		game.intervalSeconds = setInterval(game.decrementSeconds, 10)
+    	game.unbind();
+    	$("#question").text(game.questions[game.question].Q);
+    	$("#A1").text(game.questions[game.question].A1).on("click", game.answerCheck);
+    	$("#A2").text(game.questions[game.question].A2).on("click", game.answerCheck);
+    	$("#A3").text(game.questions[game.question].A3).on("click", game.answerCheck);
+    	$("#A4").text(game.questions[game.question].A4).on("click", game.answerCheck);
+    	game.correctAnswer=game.questions[game.question].C;
+    	console.log("Correct Answer: "+ game.correctAnswer);
     
+    	 // }
+
+    },
 
 
 
-      //  Once number hits zero...
-      if (seconds === 0) {  
-
-        //  ...run the stop function.
-        stop();
-        $("#display").text("");
-
-        //  Alert the user that time is up.
-        alert("Time Up!");
-      }} 	
-    
-
-    //  The stop function
-    function stop() {
-
-      //  Clears our intervalId
-      //  We just pass the name of the interval
-      //  to the clearInterval function.
-      clearInterval(intervalSeconds);
-    }
-
-    $(".start").on("click", function() {
+answerCheck: function () { //check on this, not using data correctly
 
 
-    	if(game.started===false){
-
-    	run();
-    	$(".btn").removeClass("active").addClass("disabled");
-    	$("#move").addClass("d-flex justify-content-center");
-    	$("#question").text(game.questions[0].Q);
-    	$("#A1").text(game.questions[0].A1);
-    	$("#A2").text(game.questions[0].A2);
-    	$("#A3").text(game.questions[0].A3);
-    	$("#A4").text(game.questions[0].A4);
-    	game.started=true; }
-
-    })
+    		console.log($(this).attr("data-value"));
+    		console.log(typeof game.correctAnswer);
+    		console.log(typeof $(this).attr("data-value")); //when you put this back into object REMEMBER .this
 
 
+    	if ($(this).attr("data-value") === game.correctAnswer){
 
+    		alert("Correct Answer"); //here do a function to flip to new question
+    		game.correct++;
+    		console.log("Correct " + game.correct);
+    		console.log("Incorrect " + game.incorrect);
+    		game.stop();
+    	
+    	}
 
+    	else {
 
-
-    }//end of gameFlow function
+    		alert("Incorrect Answer");
+    		game.incorrect++;
+    		console.log("Incorrect " + game.incorrect);
+    		console.log("Correct " + game.correct);
+    		game.stop();
 
     	}
 
-    game.gameFlow();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    	} //end of gameFlow function
+
+    game.timer	();
 
     //  Execute the run function.
     
