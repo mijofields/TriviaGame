@@ -4,6 +4,8 @@
 
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- view port tag-->
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> <!-- bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> <!-- my CSS -->
@@ -16,7 +18,7 @@
 </nav>
 
 <div class="jumbotron">
-  <h1 class="display-4">Trivia Time	</h1>
+  <h1 class="display-4">Historical Trivia Game</h1>
    <button type="button" class="btn btn-success btn-lg float-right start active">Start</button>
   <hr class="my-2"><p>This is a trivia quiz. You have 20 seconds to provide an answer to each of the following 10 questions.  Good luck!</p>
  <div id="move"><p id="display">Click Start to begin...</p></div>
@@ -29,16 +31,16 @@
     <p id="question">Question</p>
     <div class="row">
       <div class="col-6 border border-dark bg-info text-white answer">
-        <p id="A1" data-value="A1">Answer 1</p>
+        <p id="A1" data-value="A1" class="hover">Answer 1</p>
       </div>
       <div class="col-6 border border-dark bg-danger text-white answer">
-        <p id="A2" data-value="A2">Answer 2</p>
+        <p id="A2" data-value="A2" class="hover">Answer 2</p>
       </div>
       <div class="col-6 border border-dark bg-success text-white answer">
-        <p id="A3" data-value="A3">Answer 3</p>
+        <p id="A3" data-value="A3" class="hover">Answer 3</p>
       </div>
       <div class="col-6 border border-dark bg-secondary text-white answer">
-        <p id="A4" data-value="A4">Answer 4</p>
+        <p id="A4" data-value="A4" class="hover" >Answer 4</p>
     </div>
 </div>
 </div>

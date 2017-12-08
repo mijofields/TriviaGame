@@ -231,7 +231,7 @@ C: "A4"
 
 correct: 0,
 incorrect: 0,
-notAnswered: 0,
+noAnswer: 0,
 started: false,
 question: 0,
 correctAnswer:"",
@@ -243,8 +243,8 @@ decrementSeconds: function(){
 
 	if (game.seconds === 0 ){
 
-		alert("Time Up!");
-		game.stop();
+		game.notAnswered();
+	
 
 	} else {
 
@@ -315,17 +315,17 @@ newQuestion: function() {
 
 
 
-answerCheck: function () { //check on this, not using data correctly
+answerCheck: function () {
 
 
     		console.log($(this).attr("data-value"));
     		console.log(typeof game.correctAnswer);
-    		console.log(typeof $(this).attr("data-value")); //when you put this back into object REMEMBER .this
+    		console.log(typeof $(this).attr("data-value"));
 
 
     	if ($(this).attr("data-value") === game.correctAnswer){
 
-    		alert("Correct Answer"); //here do a function to flip to new question
+    		alert("Correct Answer");
     		game.correct++;
     		console.log("Correct " + game.correct);
     		console.log("Incorrect " + game.incorrect);
@@ -335,29 +335,58 @@ answerCheck: function () { //check on this, not using data correctly
 
     	else {
 
+
     		alert("Incorrect Answer");
     		game.incorrect++;
     		console.log("Incorrect " + game.incorrect);
     		console.log("Correct " + game.correct);
     		game.stop();
 
-    	}
+    	}},
 
 
-    }
-
-
-
+IncorrectAnswer: function(){
 
 
 
+   	
+
+   
+
+
+    },
+
+notAnswered: function(){
+
+
+    	clearInterval(game.intervalSeconds);
+      	game.question++;
+      	console.log("next question: " + game.question);
+
+    	$("#question").text("You failed to provide an answer in the time alloted");
+    	$("#A1").text("No Answer");
+    	$("#A2").text("No Answer");
+    	$("#A3").text("No Answer");
+    	$("#A4").text("No Answer");
+    	$("#display").html("<h4>" + "You failed to provide an answer, next question coming up...");
+
+    	game.noAnswer++;
+
+    	setTimeout(game.newQuestion, 3000);
+    	
+    	console.log("not answered " + game.noAnswer);
+
+
+
+
+    }}
 
 
 
 
 
 
-    	} //end of gameFlow function
+//end of gameFlow function
 
     game.timer	();
 

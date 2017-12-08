@@ -1,0 +1,20 @@
+.hover:hover{
+
+	color: gold;
+	font-weight: bolder;
+
+}
+
+.hover::first-letter{
+
+font-family: 'Vollkorn', serif;
+
+}
+
+#question, h1 {
+
+font-family: 'Spectral SC', serif;
+font-weight: bold;
+
+
+}
