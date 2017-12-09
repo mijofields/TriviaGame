@@ -10,7 +10,7 @@ questions: [{
 
 Q: "Which type of military campaign was the Battle of Britain?",
 
-A0: "Air Battle",
+A0: "Air Battle. The first of it's kind.",
 A1: "Land Battle",
 A2: "Naval Battle",
 A3: "Air Battle",
@@ -21,36 +21,35 @@ C: 'A3'
 
 {
 
-Q: 'The International Brigades was a paramilitary unit which fought during which modern civil war?',
-A0: "the Spanish Civil War.",
-A1:'Spanish Civil War',
-A2:'Guatemalan Civir War',
-A3: 'Chechen Civil War',
-A4: 'Rwandan Civil War',
+Q: 'The Art of War was written by who?',
+A0: "Sun Tzu. Written in the late sixth century BC.",
+A1:'Sun Tzu',
+A2:'Dr. Seuss',
+A3: 'Stephen King',
+A4: 'Pablo Picasso',
 C: 'A1'
 
 },
 
 {
 
-Q: "Which disease caused the pandemic of 1918?",
-A0: "Influenza.  It was also called The Spanish Flu.",
-A1: "Yellow Fever",
-A2: "The Plague",
-A3: "Influenza",
-A4: 'Measles',
-C: "A3"
-
+Q: "Which was the first capital city of the United States?",
+A0: "Philadelphia.  The Declaration of Independence was also signed in Philadelphia.",
+A1: "Annapolis, MD",
+A2: "Philadelphia, PA",
+A3: "Baltimore, MD",
+A4: "Princeton, NJ",
+C: "A2"
 },
 
 {
 
 Q: "In 1893 which was the first country to give women suffrage?",
-A0: "New Zealand",
-A1: 'United Kingdom',
+A0: "New Zealand. The suffrage movement was lead by Kate Sheppard.",
+A1: 'Papua New Guinea',
 A2: 'New Zealand',
 A3: 'France',
-A4: 'United States of America',
+A4: 'Saudi Arabia',
 C: "A2"
 
 },
@@ -59,10 +58,10 @@ C: "A2"
 {
 
  Q: "Who painted the famous oil painting on war called Guernica?",
- A0: "Pablo Picasso",
- A1: "Francisco Goya",
- A2: 'Salvador Dali',
- A3: "Joan Miro",
+ A0: "Pablo Picasso. Regarded by many as the most powerful anti-war painting.",
+ A1: "Jackson Pollock",
+ A2: 'Leonardo Da Vinci',
+ A3: "Banksy",
  A4: "Pablo Picasso",
  C: "A4"
 
@@ -70,35 +69,11 @@ C: "A2"
 
 {
 
-Q: "Who's assasination has been accredited for the outbreak of World War One?",
-A0: "Archduke Franz Ferdinand of Austria",
-A1: "King Leopold of Belgium",
-A2: "Tzar Nicolas of Russia",
-A3: "Archduke Franz Ferdinand of Austria",
-A4: "Queen Isabella of Spain",
-C: "A3"
-
-},
-
-{
-
-Q: "Whose codified law system was attributed with the move away from the Feudal system in Europe in the 19th century?",
-A0: "Napoleon Bonaparte",
-A1: "Napoleon",
-A2: "Justinian",
-A3: "King George III",
-A4: "King Victor Emmanuel",
-C: "A1"
-
-},
-
-{
-
 Q: "Who was the first person to circumnaviate the globe?",
-A0: "Ferdinand Magellan",
-A1: "Sir Francis Drake",
+A0: "Ferdinand Magellan. The expedition lasted from 1519 to 1522.",
+A1: "Sir Richard Branson",
 A2: "Ferdinand Magellan",
-A3: "Vasco da Gama",
+A3: "Orville Wright",
 A4: "Christpher Columbus",
 C: "A2"
 
@@ -106,58 +81,10 @@ C: "A2"
 
 {
 
-Q: "Which nation won the first World Cup in 1930?",
-A0: "Uruguay",
-A1: 'Brazil',
-A2: 'Argentina',
-A3: 'Germany',
-A4: 'Uruguay',
-C: "A4"
-
-},
-
-{
-
-Q: "Which of the wonders of the ancient world was found in Alexandria?",
-A0: "The Lighthouse, sometimes also called The Pharos,",
-A1: "Temple of Artmeis",
-A2: "The Great Pyramid",
-A3: "The Lighthouse",
-A4: "The Hanging Gardens",
-C: "A3"
-
-},
-
-{
-
-Q: "Who was the first Prime Minister of the State of Israel",
-A0: "David Ben Gurion",
-A1: "Shimon Peres",
-A2: "David Ben Gurion",
-A3: "Theodore Herzl",
-A4: "Meir Kahane",
-C: "A2"
-
-},
-
-{
-
-Q: "Hannibal famously crossed The Alps with which animals?",
-A0: "Elephants",
-A1: "Camels",
-A2: "Rhinos",
-A3: "Donkeys",
-A4: "Elephants",
-C: "A4"
-
-},
-
-{
-
 Q: "Which of these world religions appeard first?",
-A0: "Hinduism.",
+A0: "Hinduism is a fusion of various Indian cultures and traditions.",
 A1: "Islam",
-A2: "Buddhism",
+A2: "Mormonism",
 A3: "Christianity",
 A4: "Hinduism",
 C: "A4"
@@ -167,7 +94,7 @@ C: "A4"
 {
 
 Q: "Which of these countries declared independence first?",
-A0: "Uniated States of America in 1776.",		
+A0: "The United States of America, in 1776.",       
 A1: "United States of America",
 A2: "Mexico",
 A3: "Colombia",
@@ -178,45 +105,11 @@ C: "A1"
 
 {
 
-Q: "Who is attributed with creating the world wide web?",
-A0: "Tim Berners-Lee.",
-A1: "Tim Berners-Lee",
-A2: "Alan Turing",
-A3: "Bill Gates",
-A4: "Thomas Edison",
-C: "A1"
-
-},
-
-{
-
-Q: "Which Pacific Island island was captured by US forces on 26th March 1945",
-A0: "Iwo Jima.",
-A1: "Okinawa",
-A2: "Iwo Jima",
-A3: "Truk",
-A4: "Palau",
-C: "A2"
-
-},
-
-{
-
-Q: "What invention did Karl Benz receive a patent for in 1879?",
-A1: "Pneumatic Tire",
-A2: "Gear Stick",
-A3: "Internal Combustion Engine",
-A4: "Gear Differential",
-C: "A3"
-
-},
-
-{
-
-Q: "Which country declared independence from the UK on August 15th 1947?",
-A1: "Israel",
-A2: "Jamaica",
-A3: "South Africa",
+Q: "Which country declared independence from British rule on August 15th 1947?",
+A0: "India.  Mahatma Gandhi was the leader of the independence movement.", 
+A1: "United States of America",
+A2: "Thailand",
+A3: "Mexico",
 A4: "India",
 C: "A4"
 
@@ -224,26 +117,132 @@ C: "A4"
 
 {
 
-Q: "Which was the first capital city of the United States?",
-A1: "Annapolis, MD",
-A2: "Philadelphia, PA",
-A3: "Baltimore, MD",
-A4: "Princeton, NJ",
-C: "A2"
-
+Q: "Which of the wonders of the ancient world was found in Alexandria?",
+A0: "The Lighthouse or Pharos, of Alexandria.",
+A1: "Temple of Artmeis",
+A2: "The Great Pyramid",
+A3: "The Lighthouse",
+A4: "The Hanging Gardens",
+C: "A3"
 
 },
 
 {
 
-Q: "Which ship was the first to arrive and resuce survivors from The Titanic?",
-A1: "The Arizona",
-A2: "The George Washington",
-A3: "The Bremen",
-A4: "The Carpathia",
-C: "A4"
+Q: "What invention did Karl Benz receive a patent for in 1879?",
+A0: "The internal cobustion engine.",
+A1: "Rubber",
+A2: "The Lightbulb",
+A3: "Internal Combustion Engine",
+A4: "Steel",
+C: "A3"
 
-}],
+}
+
+// {
+
+// Q: "Hannibal famously crossed The Alps with which animals?",
+// A0: "Elephants",
+// A1: "Camels",
+// A2: "Rhinos",
+// A3: "Donkeys",
+// A4: "Elephants",
+// C: "A4"
+
+// },
+
+// {
+
+// Q: "Which of these world religions appeard first?",
+// A0: "Hinduism.",
+// A1: "Islam",
+// A2: "Buddhism",
+// A3: "Christianity",
+// A4: "Hinduism",
+// C: "A4"
+
+// },
+
+// {
+
+// Q: "Which of these countries declared independence first?",
+// A0: "Uniated States of America in 1776.",		
+// A1: "United States of America",
+// A2: "Mexico",
+// A3: "Colombia",
+// A4: "Brazil",
+// C: "A1"
+
+// },
+
+// {
+
+// Q: "Who is attributed with creating the world wide web?",
+// A0: "Tim Berners-Lee.",
+// A1: "Tim Berners-Lee",
+// A2: "Alan Turing",
+// A3: "Bill Gates",
+// A4: "Thomas Edison",
+// C: "A1"
+
+// },
+
+// {
+
+// Q: "Which Pacific Island island was captured by US forces on 26th March 1945",
+// A0: "Iwo Jima.",
+// A1: "Okinawa",
+// A2: "Iwo Jima",
+// A3: "Truk",
+// A4: "Palau",
+// C: "A2"
+
+// },
+
+// {
+
+// Q: "What invention did Karl Benz receive a patent for in 1879?",
+// A1: "Pneumatic Tire",
+// A2: "Gear Stick",
+// A3: "Internal Combustion Engine",
+// A4: "Gear Differential",
+// C: "A3"
+
+// },
+
+// {
+
+// Q: "Which country declared independence from the UK on August 15th 1947?",
+// A1: "Israel",
+// A2: "Jamaica",
+// A3: "South Africa",
+// A4: "India",
+// C: "A4"
+
+// },
+
+// {
+
+// Q: "Which was the first capital city of the United States?",
+// A1: "Annapolis, MD",
+// A2: "Philadelphia, PA",
+// A3: "Baltimore, MD",
+// A4: "Princeton, NJ",
+// C: "A2"
+
+
+// },
+
+// {
+
+// Q: "Which ship was the first to arrive and resuce survivors from The Titanic?",
+// A1: "The Arizona",
+// A2: "The George Washington",
+// A3: "The Bremen",
+// A4: "The Carpathia",
+// C: "A4"
+
+],
 
 
 correct: 0,
@@ -284,6 +283,11 @@ timer: function(){
 	$("#A1").removeClass("float-right");
 	$("#A3").removeClass("float-right");
 	$(".start").removeClass("active").addClass("disabled");
+    game.correct = 0;
+    game.incorrect= 0;
+    game.noAnswer = 0;
+    game.question = 0;
+
 	game.newQuestion();
 	game.started=true;
 
@@ -318,6 +322,13 @@ unbind: function(){
 
 newQuestion: function() {
 
+
+        if(game.question > 9){
+
+
+            game.gameOver();
+
+        } else {
 		game.seconds=2000,
 		game.intervalSeconds = setInterval(game.decrementSeconds, 10)
     	game.unbind();
@@ -328,12 +339,11 @@ newQuestion: function() {
     	$("#A4").text(game.questions[game.question].A4).on("click", game.answerCheck);
     	game.correctAnswer=game.questions[game.question].C;
     	game.correctText = game.questions[game.question].A0;
+        $(".my-2").html("<h5> You have 20 seconds to answer each of the following " + (10-game.question) + " questions:");
+        
 
-    
-    	 // }
 
-    },
-
+    }},
 
 
 answerCheck: function () {
@@ -342,17 +352,14 @@ answerCheck: function () {
     		console.log($(this).attr("data-value"));
 
 
+            game.unbind();
+
+
 
     	if ($(this).attr("data-value") === game.correctAnswer){
 
-    		alert("Correct Answer");
-    	
-    
-    		game.correct++;
-    		console.log("Correct " + game.correct);
-    		console.log("Incorrect " + game.incorrect);
-    		game.stop();
-    	
+    		
+    		game.CorrectAnswer();
     	}
 
     	else {
@@ -370,24 +377,11 @@ IncorrectAnswer: function(){
 		game.incorrect++;
 		console.log("incorrect: "+game.incorrect);
 
-		// $("#"+game.correctAnswer).addClass("fadeOut(500).fadeIn(500, blink)");
-
-// we are blinking text using simple setInterval function
-// $(function(){ 
-//  window.setInterval(function(){
-//    // 'blink' class is toggled into 'P' tag between the interval of 500 ms
-//    $().toggleClass('blink');
-//  }, 500);
-
-
-
-// });
-
 		console.log(game.correctText);
 		$("#"+game.correctAnswer).addClass("correct").fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
 
 		$("#question").text("Incorrect Answer");
-		$("#display").html("<h4> The correct answer was " + game.correctText);
+		$("#display").html("<h4>" + game.correctText);
 
     	// $("#display").html("<h4>" + "The correct answer was " + ;
 
@@ -396,17 +390,26 @@ IncorrectAnswer: function(){
    		setTimeout(game.newQuestion, 3000);
 
 
-
-//    	// we are blinking text using simple setInterval function
-// $(function(){ 
-//  window.setInterval(function(){
-//    // 'blink' class is toggled into 'P' tag between the interval of 500 ms
-//    $('P').toggleClass('blink');
-//  }, 500);
-// });
- 
-
  },
+
+
+CorrectAnswer: function(){
+
+
+		clearInterval(game.intervalSeconds);
+		game.question++;
+		game.correct++;
+		$("#"+game.correctAnswer).addClass("correct").fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
+
+		$("#question").text("Correct Answer");
+		$("#display").html("<h4>" + game.correctText);
+		setTimeout(game.newQuestion, 3000);
+	
+
+
+
+
+},
 
 notAnswered: function(){
 
@@ -420,7 +423,7 @@ notAnswered: function(){
     	$("#A2").text("No Answer");
     	$("#A3").text("No Answer");
     	$("#A4").text("No Answer");
-    	$("#display").html("<h4>" + "You didn't provide an answer, next question coming up...");
+    	$("#display").html("<h4> You didn't provide an answer, next question coming up...");
 
     	game.noAnswer++;
 
@@ -428,12 +431,43 @@ notAnswered: function(){
     	
     	console.log("not answered " + game.noAnswer);
 
-}};
+},
+
+
+gameOver: function(){
+
+
+    var percentage = (game.correct / 10)*100
+
+
+    game.unbind();
+    clearInterval(game.intervalSeconds);
+    $("#question").text("The Game is over! Well done!");
+    $("#A1").text("You got " + game.correct + " right.");
+    $("#A2").text("You got " + game.incorrect+ " wrong.");
+    $("#A3").text("You did not answer " + game.noAnswer+".");
+    $("#A4").text("You were " + percentage +"% correct.");
+    $("#display").html("<h4> The game is over, click Start to try again");
+    $(".my-2").text("");
+    game.started=false;
+    $(".start").removeClass("disabled").addClass("active");
+    game.timer();
+
+    
 
 
 
 
+}
 
+
+
+};
+
+
+
+
+$(".my-2").html("<h5> You have 20 seconds to answer each of the following 10 questions.");
 
 
 
