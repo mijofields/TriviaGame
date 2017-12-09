@@ -9,6 +9,8 @@ questions: [{
 
 
 Q: "Which type of military campaign was the Battle of Britain?",
+
+A0: "Air Battle",
 A1: "Land Battle",
 A2: "Naval Battle",
 A3: "Air Battle",
@@ -20,6 +22,7 @@ C: 'A3'
 {
 
 Q: 'The International Brigades was a paramilitary unit which fought during which modern civil war?',
+A0: "the Spanish Civil War.",
 A1:'Spanish Civil War',
 A2:'Guatemalan Civir War',
 A3: 'Chechen Civil War',
@@ -31,6 +34,7 @@ C: 'A1'
 {
 
 Q: "Which disease caused the pandemic of 1918?",
+A0: "Influenza.  It was also called The Spanish Flu.",
 A1: "Yellow Fever",
 A2: "The Plague",
 A3: "Influenza",
@@ -42,6 +46,7 @@ C: "A3"
 {
 
 Q: "In 1893 which was the first country to give women suffrage?",
+A0: "New Zealand",
 A1: 'United Kingdom',
 A2: 'New Zealand',
 A3: 'France',
@@ -54,6 +59,7 @@ C: "A2"
 {
 
  Q: "Who painted the famous oil painting on war called Guernica?",
+ A0: "Pablo Picasso",
  A1: "Francisco Goya",
  A2: 'Salvador Dali',
  A3: "Joan Miro",
@@ -65,6 +71,7 @@ C: "A2"
 {
 
 Q: "Who's assasination has been accredited for the outbreak of World War One?",
+A0: "Archduke Franz Ferdinand of Austria",
 A1: "King Leopold of Belgium",
 A2: "Tzar Nicolas of Russia",
 A3: "Archduke Franz Ferdinand of Austria",
@@ -76,6 +83,7 @@ C: "A3"
 {
 
 Q: "Whose codified law system was attributed with the move away from the Feudal system in Europe in the 19th century?",
+A0: "Napoleon Bonaparte",
 A1: "Napoleon",
 A2: "Justinian",
 A3: "King George III",
@@ -87,6 +95,7 @@ C: "A1"
 {
 
 Q: "Who was the first person to circumnaviate the globe?",
+A0: "Ferdinand Magellan",
 A1: "Sir Francis Drake",
 A2: "Ferdinand Magellan",
 A3: "Vasco da Gama",
@@ -98,6 +107,7 @@ C: "A2"
 {
 
 Q: "Which nation won the first World Cup in 1930?",
+A0: "Uruguay",
 A1: 'Brazil',
 A2: 'Argentina',
 A3: 'Germany',
@@ -109,6 +119,7 @@ C: "A4"
 {
 
 Q: "Which of the wonders of the ancient world was found in Alexandria?",
+A0: "The Lighthouse, sometimes also called The Pharos,",
 A1: "Temple of Artmeis",
 A2: "The Great Pyramid",
 A3: "The Lighthouse",
@@ -120,6 +131,7 @@ C: "A3"
 {
 
 Q: "Who was the first Prime Minister of the State of Israel",
+A0: "David Ben Gurion",
 A1: "Shimon Peres",
 A2: "David Ben Gurion",
 A3: "Theodore Herzl",
@@ -131,6 +143,7 @@ C: "A2"
 {
 
 Q: "Hannibal famously crossed The Alps with which animals?",
+A0: "Elephants",
 A1: "Camels",
 A2: "Rhinos",
 A3: "Donkeys",
@@ -142,6 +155,7 @@ C: "A4"
 {
 
 Q: "Which of these world religions appeard first?",
+A0: "Hinduism.",
 A1: "Islam",
 A2: "Buddhism",
 A3: "Christianity",
@@ -152,7 +166,8 @@ C: "A4"
 
 {
 
-Q: "Which of these countries declared independence first?",		
+Q: "Which of these countries declared independence first?",
+A0: "Uniated States of America in 1776.",		
 A1: "United States of America",
 A2: "Mexico",
 A3: "Colombia",
@@ -164,6 +179,7 @@ C: "A1"
 {
 
 Q: "Who is attributed with creating the world wide web?",
+A0: "Tim Berners-Lee.",
 A1: "Tim Berners-Lee",
 A2: "Alan Turing",
 A3: "Bill Gates",
@@ -175,6 +191,7 @@ C: "A1"
 {
 
 Q: "Which Pacific Island island was captured by US forces on 26th March 1945",
+A0: "Iwo Jima.",
 A1: "Okinawa",
 A2: "Iwo Jima",
 A3: "Truk",
@@ -237,6 +254,7 @@ question: 0,
 correctAnswer:"",
 seconds: 2000,
 intervalSeconds:"",
+correctText: "",
 
 
 decrementSeconds: function(){
@@ -263,6 +281,8 @@ timer: function(){
 
 	if(game.started===false){
 	$("#move").addClass("d-flex justify-content-center");
+	$("#A1").removeClass("float-right");
+	$("#A3").removeClass("float-right");
 	$(".start").removeClass("active").addClass("disabled");
 	game.newQuestion();
 	game.started=true;
@@ -286,10 +306,10 @@ stop: function() {
 unbind: function(){
 
 
-	$("#A1").unbind("click");
-	$("#A2").unbind("click");
-	$("#A3").unbind("click");
-	$("#A4").unbind("click");
+	$("#A1").unbind("click").removeClass("correct");
+	$("#A2").unbind("click").removeClass("correct");
+	$("#A3").unbind("click").removeClass("correct");
+	$("#A4").unbind("click").removeClass("correct");
 
 
 },
@@ -307,7 +327,8 @@ newQuestion: function() {
     	$("#A3").text(game.questions[game.question].A3).on("click", game.answerCheck);
     	$("#A4").text(game.questions[game.question].A4).on("click", game.answerCheck);
     	game.correctAnswer=game.questions[game.question].C;
-    	console.log("Correct Answer: "+ game.correctAnswer);
+    	game.correctText = game.questions[game.question].A0;
+
     
     	 // }
 
@@ -319,13 +340,14 @@ answerCheck: function () {
 
 
     		console.log($(this).attr("data-value"));
-    		console.log(typeof game.correctAnswer);
-    		console.log(typeof $(this).attr("data-value"));
+
 
 
     	if ($(this).attr("data-value") === game.correctAnswer){
 
     		alert("Correct Answer");
+    	
+    
     		game.correct++;
     		console.log("Correct " + game.correct);
     		console.log("Incorrect " + game.incorrect);
@@ -348,23 +370,43 @@ IncorrectAnswer: function(){
 		game.incorrect++;
 		console.log("incorrect: "+game.incorrect);
 
-		$("#"+game.correctAnswer).addClass("fadeOut(500).fadeIn(500, blink)");
+		// $("#"+game.correctAnswer).addClass("fadeOut(500).fadeIn(500, blink)");
+
+// we are blinking text using simple setInterval function
+// $(function(){ 
+//  window.setInterval(function(){
+//    // 'blink' class is toggled into 'P' tag between the interval of 500 ms
+//    $().toggleClass('blink');
+//  }, 500);
 
 
+
+// });
+
+		console.log(game.correctText);
+		$("#"+game.correctAnswer).addClass("correct").fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
 
 		$("#question").text("Incorrect Answer");
-		// $("#A1").text(game.questions[game.question].A1);
-  //   	$("#A2").text(game.questions[game.question].A2);
-  //   	$("#A3").text(game.questions[game.question].A3);
-  //   	$("#A4").text(game.questions[game.question].A4);
-    	$("#display").html("<h4>" + "You anwered inorrectly, the correct answer was " + game.correctAnswer + ".");
+		$("#display").html("<h4> The correct answer was " + game.correctText);
 
-   	setTimeout(game.newQuestion, 3000);
+    	// $("#display").html("<h4>" + "The correct answer was " + ;
 
-   
+    	
+
+   		setTimeout(game.newQuestion, 3000);
 
 
-    },
+
+//    	// we are blinking text using simple setInterval function
+// $(function(){ 
+//  window.setInterval(function(){
+//    // 'blink' class is toggled into 'P' tag between the interval of 500 ms
+//    $('P').toggleClass('blink');
+//  }, 500);
+// });
+ 
+
+ },
 
 notAnswered: function(){
 
@@ -373,12 +415,12 @@ notAnswered: function(){
       	game.question++;
       	console.log("next question: " + game.question);
 
-    	$("#question").text("You failed to provide an answer in the time alloted");
+    	$("#question").text("You did not provide an answer in the time alloted");
     	$("#A1").text("No Answer");
     	$("#A2").text("No Answer");
     	$("#A3").text("No Answer");
     	$("#A4").text("No Answer");
-    	$("#display").html("<h4>" + "You failed to provide an answer, next question coming up...");
+    	$("#display").html("<h4>" + "You didn't provide an answer, next question coming up...");
 
     	game.noAnswer++;
 
