@@ -335,21 +335,31 @@ answerCheck: function () {
 
     	else {
 
-
-    		alert("Incorrect Answer");
-    		game.incorrect++;
-    		console.log("Incorrect " + game.incorrect);
-    		console.log("Correct " + game.correct);
-    		game.stop();
+ 
+    		game.IncorrectAnswer();
 
     	}},
 
 
 IncorrectAnswer: function(){
 
+		clearInterval(game.intervalSeconds);
+		game.question++;
+		game.incorrect++;
+		console.log("incorrect: "+game.incorrect);
+
+		$("#"+game.correctAnswer).addClass("fadeOut(500).fadeIn(500, blink)");
 
 
-   	
+
+		$("#question").text("Incorrect Answer");
+		// $("#A1").text(game.questions[game.question].A1);
+  //   	$("#A2").text(game.questions[game.question].A2);
+  //   	$("#A3").text(game.questions[game.question].A3);
+  //   	$("#A4").text(game.questions[game.question].A4);
+    	$("#display").html("<h4>" + "You anwered inorrectly, the correct answer was " + game.correctAnswer + ".");
+
+   	setTimeout(game.newQuestion, 3000);
 
    
 
@@ -376,10 +386,9 @@ notAnswered: function(){
     	
     	console.log("not answered " + game.noAnswer);
 
+}};
 
 
-
-    }}
 
 
 
