@@ -246,43 +246,43 @@ C: "A3"
 ],
 
 
-correct: 0,
-incorrect: 0,
-noAnswer: 0,
-started: false,
-question: 0,
-correctAnswer:"",
-seconds: 2000,
-intervalSeconds:"",
-correctText: "",
+correct: 0, //count of correct answers
+incorrect: 0, //count of incorrect answers
+noAnswer: 0, //count of unanswered
+started: false, // to prevent multiple usage of start button
+question: 0, // key to advance questions objects
+correctAnswer:"", // to check the user selection
+seconds: 2000, //20 second timer
+intervalSeconds:"", //to set the speed of timer 
+correctText: "", // for displaying the correct answer message
 
 
-decrementSeconds: function(){
+decrementSeconds: function(){  //
 
-	if (game.seconds === 0 ){
+	if (game.seconds === 0 ){ //if the counter reaches zero
 
-		game.notAnswered();
+		game.notAnswered();  //trigger response function
 	
 
 	} else {
 
 		game.seconds--;
-		$("#display").html("<h4>" + game.seconds);
+		$("#display").html("<h4>" + game.seconds); //display the countdown timer
 
 	}
 
 }, //end of decrement seconds
 
 
-timer: function(){
+timer: function(){  // 
 
 
-	$(".start").on("click", function () {
+	$(".start").on("click", function () { // on click of the start button
 
-	if(game.started===false){
-	$("#move").addClass("d-flex justify-content-center");
-	$("#A1").removeClass("float-right");
-	$("#A3").removeClass("float-right");
+	if(game.started===false){ //allow if not already triggered
+	$("#move").addClass("d-flex justify-content-center"); //center the timer
+	$("#A1").removeClass("float-right"); // to move the quadrant display out of flag mode
+	$("#A3").removeClass("float-right"); // to move the quadrant display out of flag mode 
 	$(".start").removeClass("active").addClass("disabled");
     game.correct = 0;
     game.incorrect= 0;
@@ -295,20 +295,18 @@ timer: function(){
     	 }})}, //end of timer function
 
 
-stop: function() {
+stop: function() {  //to stop the timer running
 
 
 	  clearInterval(game.intervalSeconds);
       game.question++;
-      console.log("next question: " + game.question);
-      // game.gameFlow();
       game.newQuestion();
 
 
 
 }, //end of stop
 
-unbind: function(){
+unbind: function(){ //to remove assigned click events and class from quadrant, was getting multiple onclick events triggering upon selection
 
 
 	$("#A1").unbind("click").removeClass("correct");
@@ -333,24 +331,23 @@ newQuestion: function() {
 		game.seconds=2000,
 		game.intervalSeconds = setInterval(game.decrementSeconds, 10)
     	game.unbind();
-    	$("#question").text(game.questions[game.question].Q);
+    	$("#question").text(game.questions[game.question].Q); //where the quadrant is assigned and concluding text
     	$("#A1").text(game.questions[game.question].A1).on("click", game.answerCheck);
     	$("#A2").text(game.questions[game.question].A2).on("click", game.answerCheck);
     	$("#A3").text(game.questions[game.question].A3).on("click", game.answerCheck);
     	$("#A4").text(game.questions[game.question].A4).on("click", game.answerCheck);
     	game.correctAnswer=game.questions[game.question].C;
     	game.correctText = game.questions[game.question].A0;
-        $(".my-2").html("<h5> You have 20 seconds each to answer the following " + (10-game.question) + " questions:");
+        $(".my-2").html("<h5> You have 20 seconds each to answer the following " + (10-game.question) + " questions:"); 
+
+        //adjusts the number of questions remaining
         
 
 
     }},
 
 
-answerCheck: function () {
-
-
-    		console.log($(this).attr("data-value"));
+answerCheck: function () { // check for correctness and send for outcome
 
 
             game.unbind();
@@ -373,22 +370,17 @@ answerCheck: function () {
 
 IncorrectAnswer: function(){
 
-		clearInterval(game.intervalSeconds);
+		clearInterval(game.intervalSeconds); //stop the clock
 		game.question++;
 		game.incorrect++;
-		console.log("incorrect: "+game.incorrect);
-
-		console.log(game.correctText);
 		$("#"+game.correctAnswer).addClass("correct").fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
-
+                    //fades in and out for 200 milliseconds 15*
 		$("#question").text("Incorrect Answer");
 		$("#display").html("<h4>" + game.correctText);
 
-    	// $("#display").html("<h4>" + "The correct answer was " + ;
-
     	
 
-   		setTimeout(game.newQuestion, 3000);
+   		setTimeout(game.newQuestion, 3000); //this screen holds for 3 seconds before the next question is assigned
 
 
  },
@@ -429,8 +421,7 @@ notAnswered: function(){
     	game.noAnswer++;
 
     	setTimeout(game.newQuestion, 3000);
-    	
-    	console.log("not answered " + game.noAnswer);
+    
 
 },
 
@@ -438,7 +429,7 @@ notAnswered: function(){
 gameOver: function(){
 
 
-    var percentage = (game.correct / 10)*100
+    var percentage = (game.correct / 10)*100 //for final display %age
 
 
     game.unbind();
@@ -465,7 +456,7 @@ gameOver: function(){
 
 };
 
-
+//I dont like this but I couldn't 
 
 
 $(".my-2").html("<h5> You have 20 seconds each to answer the following 10 questions.");
