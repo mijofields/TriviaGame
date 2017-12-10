@@ -34,5 +34,11 @@ h4, h5, .navbar{
 font-family: 'Rokkitt', serif;
 
 
+}
+
+body, .jumbotron{
+
+
+background-image: url(https://github.com/mijofields/Crystal_Hunter_Game/blob/master/assets/images/swirl_pattern.png?raw=true)
 
 }

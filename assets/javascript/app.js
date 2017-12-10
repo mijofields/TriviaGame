@@ -15,7 +15,8 @@ A1: "Land Battle",
 A2: "Naval Battle",
 A3: "Air Battle",
 A4: "Siege",
-C: 'A3'
+C: 'A3',
+Pic: "https://www.thesun.co.uk/wp-content/uploads/2017/09/nintchdbpict000352144031.jpg?strip=all&w=960&quality=100"
 
 },
 
@@ -58,7 +59,7 @@ C: "A2"
 {
 
  Q: "Who painted the famous oil painting on war called Guernica?",
- A0: "Pablo Picasso. Regarded by many as the most powerful anti-war painting.",
+ A0: "Pablo Picasso, it is regarded by many the most powerful anti-war painting.",
  A1: "Jackson Pollock",
  A2: 'Leonardo Da Vinci',
  A3: "Banksy",
@@ -339,7 +340,7 @@ newQuestion: function() {
     	$("#A4").text(game.questions[game.question].A4).on("click", game.answerCheck);
     	game.correctAnswer=game.questions[game.question].C;
     	game.correctText = game.questions[game.question].A0;
-        $(".my-2").html("<h5> You have 20 seconds to answer each of the following " + (10-game.question) + " questions:");
+        $(".my-2").html("<h5> You have 20 seconds each to answer the following " + (10-game.question) + " questions:");
         
 
 
@@ -467,7 +468,7 @@ gameOver: function(){
 
 
 
-$(".my-2").html("<h5> You have 20 seconds to answer each of the following 10 questions.");
+$(".my-2").html("<h5> You have 20 seconds each to answer the following 10 questions.");
 
 
 
